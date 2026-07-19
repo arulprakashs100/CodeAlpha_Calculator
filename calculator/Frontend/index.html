@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <title>Calq – Premium Glassmorphic Calculator Web Application</title>
+    <meta name="description" content="A premium glassmorphic calculator web application featuring dark/light themes, keyboard support, calculation history, and smooth animations. Built with vanilla HTML, CSS, and JavaScript.">
+    <meta name="keywords" content="calculator, glassmorphism, responsive web app, vanilla js, keyboard shortcuts, history panel, dark mode, light mode">
+    <meta name="author" content="Antigravity">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Calq – Premium Glassmorphic Calculator">
+    <meta property="og:description" content="A premium glassmorphic calculator web application featuring dark/light themes, keyboard support, calculation history, and smooth animations.">
+    <meta property="og:url" content="https://calq.app">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Boot Loading Splash Screen -->
+    <div class="app-loader" id="app-loader" aria-hidden="true">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-logo">Calq</div>
+        </div>
+    </div>
+
+    <!-- Animated Background Mesh Grid -->
+    <div class="bg-animated-mesh">
+        <div class="mesh-orb orb-1"></div>
+        <div class="mesh-orb orb-2"></div>
+        <div class="mesh-orb orb-3"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container" id="app">
+        <!-- Calculator Outer Card -->
+        <main class="calculator-card" id="calculator-card" aria-label="Calculator" role="application">
+            
+            <!-- Calculator Header Controls -->
+            <header class="calc-header">
+                <h1 class="logo" id="app-logo">Calq</h1>
+                <div class="header-controls">
+                    <!-- History Toggle Button -->
+                    <button class="icon-btn" id="history-toggle-btn" title="Calculation History" aria-label="Toggle History Panel">
+                        <svg class="icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+                        </svg>
+                    </button>
+                    <!-- Theme Toggle Button -->
+                    <button class="icon-btn" id="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Light and Dark Theme">
+                        <!-- Sun Icon (shown in dark theme) -->
+                        <svg class="icon sun-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41zm-12.37 12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41z"/>
+                        </svg>
+                        <!-- Moon Icon (shown in light theme) -->
+                        <svg class="icon moon-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.7 3.3-8.8 8-9.8.7-.1 1.4.3 1.6 1 .2.7-.1 1.4-.8 1.7-3.2 1.4-5.3 4.6-5.3 8.1 0 4.4 3.6 8 8 8 3.5 0 6.7-2.1 8.1-5.3.3-.7 1-1 1.7-.8.7.2 1.1.9 1 1.6-.9 4.7-5 8-9.8 8.2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Display Area -->
+            <section class="display-container" id="display-container">
+                <div class="display-history-preview" id="display-history-preview" aria-hidden="true">&nbsp;</div>
+                <div class="display-current" id="display-current" aria-live="polite" aria-label="Current result">0</div>
+                
+                <!-- Clipboard Copy Control -->
+                <button class="copy-btn" id="copy-btn" title="Copy Result" aria-label="Copy result to clipboard">
+                    <svg class="icon copy-icon" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                    </svg>
+                    <svg class="icon check-icon hidden" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    <span class="tooltip" id="copy-tooltip">Copied!</span>
+                </button>
+            </section>
+
+            <!-- Buttons Grid -->
+            <section class="keypad" aria-label="Calculator Keypad">
+                <!-- Row 1 -->
+                <button class="btn btn-action btn-ac" id="btn-ac" data-key="Escape" aria-label="Clear All">AC</button>
+                <button class="btn btn-action btn-del" id="btn-del" data-key="Backspace" aria-label="Delete last character">
+                    <svg class="icon" viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-3 12.59L17.59 17 14 13.41 10.41 17 9 15.59 12.59 12 9 8.41 10.41 7 14 10.59 17.59 7 19 8.41 15.41 12 19 15.59z"/>
+                    </svg>
+                </button>
+                <button class="btn btn-action btn-pct" id="btn-pct" data-key="%" aria-label="Percentage">%</button>
+                <button class="btn btn-operator btn-div" id="btn-div" data-key="/" aria-label="Divide">÷</button>
+
+                <!-- Row 2 -->
+                <button class="btn btn-num btn-7" id="btn-7" data-key="7">7</button>
+                <button class="btn btn-num btn-8" id="btn-8" data-key="8">8</button>
+                <button class="btn btn-num btn-9" id="btn-9" data-key="9">9</button>
+                <button class="btn btn-operator btn-mul" id="btn-mul" data-key="*" aria-label="Multiply">×</button>
+
+                <!-- Row 3 -->
+                <button class="btn btn-num btn-4" id="btn-4" data-key="4">4</button>
+                <button class="btn btn-num btn-5" id="btn-5" data-key="5">5</button>
+                <button class="btn btn-num btn-6" id="btn-6" data-key="6">6</button>
+                <button class="btn btn-operator btn-sub" id="btn-sub" data-key="-" aria-label="Subtract">−</button>
+
+                <!-- Row 4 -->
+                <button class="btn btn-num btn-1" id="btn-1" data-key="1">1</button>
+                <button class="btn btn-num btn-2" id="btn-2" data-key="2">2</button>
+                <button class="btn btn-num btn-3" id="btn-3" data-key="3">3</button>
+                <button class="btn btn-operator btn-add" id="btn-add" data-key="+" aria-label="Add">+</button>
+
+                <!-- Row 5 -->
+                <button class="btn btn-action btn-neg" id="btn-neg" data-key="negate" aria-label="Toggle Positive/Negative">±</button>
+                <button class="btn btn-num btn-0" id="btn-0" data-key="0">0</button>
+                <button class="btn btn-num btn-dec" id="btn-dec" data-key=".">.</button>
+                <button class="btn btn-equals btn-eq" id="btn-eq" data-key="Enter" aria-label="Equal">=</button>
+            </section>
+        </main>
+
+        <!-- Slide-out Calculation History Panel -->
+        <aside class="history-panel" id="history-panel" aria-label="Calculation History">
+            <div class="history-header">
+                <h2>History</h2>
+                <div class="history-actions">
+                    <button class="text-btn clear-history-btn" id="clear-history-btn" aria-label="Clear calculations history">Clear</button>
+                    <button class="icon-btn close-history-btn" id="close-history-btn" aria-label="Close History Panel">
+                        <svg class="icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="history-list-wrapper" id="history-list-wrapper">
+                <ul class="history-list" id="history-list">
+                    <!-- History items will be injected here by JS -->
+                </ul>
+                <div class="history-empty" id="history-empty">
+                    <svg class="icon empty-icon" viewBox="0 0 24 24" width="48" height="48">
+                        <path fill="currentColor" opacity="0.3" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM11 7h2v2h-2zm0 4h2v6h-2z"/>
+                    </svg>
+                    <p>No history yet</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Dynamic Overlay for Close Events -->
+        <div class="overlay" id="overlay" aria-hidden="true"></div>
+    </div>
+
+
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
